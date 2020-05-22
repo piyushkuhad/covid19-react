@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './container/logo.svg';
 import './App.css';
 import coronalogo from '../assets/Images/coronavirus.png';
 
