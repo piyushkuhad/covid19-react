@@ -46,3 +46,10 @@
 .isGreyBg {
     background-color: #6c757d;
 }
+
+.cm-card-container {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+}

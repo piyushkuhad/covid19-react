@@ -75,13 +75,15 @@ class ContentTable extends Component {
         return(
             <div className="cm-ContentTable-container">
                 <div className="container">
-                    <DataTable
-                        title="Statewise Data"
-                        columns={this.state.columns}
-                        data={this.state.data}
-                        fixedHeader
-                        
-                    />
+                    <div className="cm-card-container">
+                        <DataTable
+                            title="Statewise Data"
+                            columns={this.state.columns}
+                            data={this.state.data}
+                            fixedHeader
+                            
+                        />
+                    </div>
                 </div>
             </div>
         )

@@ -1,6 +1,7 @@
 .cm-four-col-eq {
     display: flex;
     justify-content: space-between;
+    margin: 0 -10px;
 }
 
 .cm-card-item {
