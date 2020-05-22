@@ -1,4 +1,4 @@
-#COVID19 Dashboard using react.js
+# COVID19 Dashboard using react.js
 
 ### `npm start`
 
