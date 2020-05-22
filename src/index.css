@@ -46,8 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #6c757d;
   font-weight: 600;
   margin: 0;
-  text-align: right;
-  padding: 0 10px;
+  font-size: 14px;
 }
 
 /* Animations */

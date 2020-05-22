@@ -2,12 +2,11 @@ import React from 'react';
 import Card from '../Card/Card';
 
 const TotalCases = ({totalData}) => {
-    console.log('Data', totalData);
     const {confirmed, active, deaths, deltaconfirmed, deltadeaths, deltarecovered, lastupdatedtime, recovered} = totalData;
     return(
         <div className="cm-totalcase-container">
             <div className="container">
-                <div class="cm-update-time">
+                <div className="cm-update-time">
                     <p>Last Updated: {lastupdatedtime}</p>
                 </div>
                 <div className="Card-Container cm-four-col-eq">

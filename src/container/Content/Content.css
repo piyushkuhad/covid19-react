@@ -3,6 +3,18 @@
     margin-left: 250px;
 }
 
+.hv-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.hv-center svg {
+    width: 80%;
+}
+
 .isCherry{
     color: #ff073a;
 }

@@ -8,7 +8,7 @@ const SideNav = () => {
         <div className="cm-sideNav-container">
             <div className="cm-logo">
                 <h1 className="mainHead">C<img src={coronalogo} alt="corona" />vid-19</h1>
-                <div class="cm-sideNav-menu">
+                <div className="cm-sideNav-menu">
                     <ul>
                         <li><i><SvgManager showSVG='homeSvg'/></i><span>Home</span></li>
                         <li><i><SvgManager showSVG='worldSvg'/></i><span>Global Cases</span></li>
