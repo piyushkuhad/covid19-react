@@ -1,0 +1,11 @@
+.mainHead {
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 10px 0;
+}
+
+.mainHead img {
+  width: 41px;
+}
