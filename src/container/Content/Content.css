@@ -1,0 +1,36 @@
+.Content{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+}
+
+.isCherry{
+    color: #ff073a;
+}
+
+.isBlue {
+    color: #007bff;
+}
+
+.isGreen {
+    color: #28a745;
+}
+
+.isGrey {
+    color: #6c757d;
+}
+
+.isCherryBg {
+    background-color: #ff073a;
+}
+
+.isBlueBg {
+    background-color: #007bff;
+}
+
+.isGreenBg {
+    background-color: #28a745;
+}
+
+.isGreyBg {
+    background-color: #6c757d;
+}

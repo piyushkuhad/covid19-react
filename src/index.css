@@ -5,9 +5,7 @@ body {
     sans-serif;
   font-size: 16px;
   line-height: 1.2;
-  color: #fff;
   font-family: 'Cairo', sans-serif;
-  background-color: #010f1a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,4 +22,59 @@ code {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
+}
+
+.Content .container {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+.cm-pulse {
+  display: block;
+  margin: 10px;
+  width: 6px;
+  height: 6px;
+  text-transform: uppercase;
+  background: #ff1818;
+  border-radius: 50%;
+  -webkit-animation: shadow-pulse 1s infinite;
+  animation: shadow-pulse 1s infinite;
+}
+
+.cm-update-time {
+  color: #6c757d;
+  font-weight: 600;
+  margin: 0;
+  text-align: right;
+  padding: 0 10px;
+}
+
+/* Animations */
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-duration: .45s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

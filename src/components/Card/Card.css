@@ -1,0 +1,50 @@
+.cm-four-col-eq {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cm-card-item {
+    width: calc(25% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.cm-card-item > * {
+    width: 100%;
+}
+
+.cm-card-item > .cm-pulse {
+    width: 6px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cm-card-item h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 15px 0 10px;
+}
+
+.cm-card-item p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.cm-card-item h1 {
+    font-size: 24px;
+    padding: 10px 0 15px;
+    margin: 0;
+}
+
+.cm-update-time {
+    text-align: right;
+    padding: 0 10px;
+}
