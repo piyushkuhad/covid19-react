@@ -4,16 +4,10 @@
     margin: 0 -10px;
 }
 
-.cm-card-item {
-    width: calc(25% - 20px);
+.cm-card-item-wrapper .cm-card-item {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    margin: 0 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    position: relative;
-    padding: 0 10px;
-    text-align: center;
 }
 
 .cm-card-item > * {
