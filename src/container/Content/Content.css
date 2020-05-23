@@ -53,3 +53,8 @@
     padding: 0 10px;
     text-align: center;
 }
+
+table th {
+    position: sticky;
+    top: 0;
+}

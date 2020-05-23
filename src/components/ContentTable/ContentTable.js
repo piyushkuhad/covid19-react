@@ -71,7 +71,17 @@ class ContentTable extends Component {
         }
     } 
     
+    fixHead(){
+        var tbHead = document.querySelector('.rdt_TableHead');
+        window.addEventListener('scroll', function (event) {
+            console.log(tbHead.offset);
+        }, false);
+    }
+
     render(){
+        setTimeout(()=> {
+            this.fixHead();
+        }, 2000)
         return(
             <div className="cm-ContentTable-container">
                 <div className="container">
@@ -80,8 +90,7 @@ class ContentTable extends Component {
                             title="Statewise Data"
                             columns={this.state.columns}
                             data={this.state.data}
-                            fixedHeader
-                            
+                            fixedHeader 
                         />
                     </div>
                 </div>

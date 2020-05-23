@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import TotalCases from '../../components/TotalCases/TotalCases';
-import ContentTable from '../../components/ContentTable/ContentTable';
+// import ContentTable from '../../components/ContentTable/ContentTable';
 import './Content.css';
 import ListStyleLoader from '../../components/ListStyleLoader/ListStyleLoader';
+import SortTable from '../../components/SortTable/SortTable';
 
 class Content extends Component {
   constructor(){
@@ -28,9 +29,10 @@ class Content extends Component {
   render(){
     return this.state.statewise_total_data.length ?
     (
-      <div className="Content">
+      <div className="Content" style={{paddingBottom: 1000}}>
         <TotalCases totalData={this.state.country_total_data}/>
-        <ContentTable statewise_total_data={this.state.statewise_total_data} test="test"/>
+        {/* <ContentTable statewise_total_data={this.state.statewise_total_data} test="test"/> */}
+        <SortTable statewise_total_data={this.state.statewise_total_data.slice(1)}/>
       </div>
     )
     :

@@ -1,0 +1,84 @@
+
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+}
+
+thead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  padding: 0.5em;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+
+thead button.ascending::after,
+thead button.descending::after {
+  content: '';
+  display: inline-block;
+  margin-left: 5px;
+  background-image: url(../../assets/Images/caret.png);
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+thead button.ascending::after {
+  transform: rotate(180deg);
+}
+
+tbody td {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.cm-sortTable-container table th button,
+.cm-sortTable-container table tr td {
+  border-radius: 10px;
+  border-right: 2px solid #fff;
+}
+
+.cm-sortTable-container table tr td {
+  margin: 2px 0;
+  border-bottom: 2px solid #eee;
+}
+
+.cm-sortTable-container table tbody tr:hover td {
+  background-color: #eee;
+  border-color: #fff;
+}
+
+.cm-sortTable-container table caption {
+  font-size: 25px;
+  padding: 15px 0;
+}
+
+.cm-sortTable-container table th button {
+  width: 100%;
+}
+
+.cm-sortTable-container .__react_component_tooltip {
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  width: 250px;
+}
+  
+.cm-sortTable-container td svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 3px;
+  color: #999;
+  cursor: pointer;
+  margin-left: 5px;
+  vertical-align: -1.5px;
+}
