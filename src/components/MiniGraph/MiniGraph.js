@@ -10,14 +10,15 @@ export default class MiniGraph extends React.Component {
         datasets: [
           {
             fill: false,
-            lineTension: 0,
+            lineTension: 0.2,
             backgroundColor: 'rgba(255,255,255,1)',
             borderColor: props.borderColor,
-            borderWidth: 3.5,
+            borderWidth: 3,
             data: props.graphData
           }
         ]
       }
+      //console.log('Graph State', this.state);
   }
   render() {
     return (
@@ -25,7 +26,7 @@ export default class MiniGraph extends React.Component {
         <Line
           data={this.state}
         //   width={700}
-          height={100}
+          height={80}
           options={{
             responsive:true,
             maintainAspectRatio: false,

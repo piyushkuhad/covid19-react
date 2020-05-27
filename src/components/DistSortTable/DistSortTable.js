@@ -1,5 +1,5 @@
 import React from 'react';
-import './SortTable.css';
+import '../SortTable/SortTable.css';
 import ReactTooltip from 'react-tooltip';
 
 const useSortableData = (items, config = null) => {
@@ -38,7 +38,6 @@ const useSortableData = (items, config = null) => {
 
 const ProductTable = (props) => {
   const { items, requestSort, sortConfig } = useSortableData(props.products);
-  let stateClick = props.stateClick, isState = props.isState;
   const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
@@ -46,22 +45,12 @@ const ProductTable = (props) => {
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
 
-  /*const stateClick = (e) => {
-    //console.log(e.target.innerText);
-    state_click = true;
-    stateCode_route = e.target.getAttribute('statecode');
-    console.log('state_click', state_click);
-    console.log(district_info[e.target.innerText]);
-    //console.log(e.target.getAttribute('statecode'));
-    console.log(stateCode_route);
-  } */
-
   return (
     <div className="cm-sortTable-container">
         <div className="container">
             <div className="cm-card-container">
                 <table>
-                    <caption className="cm-card-head fadeInUp">Statewise Data</caption>
+                    <caption className="cm-card-head fadeInUp">District-wise Data</caption>
                     <thead>
                         <tr>
                           <th>
@@ -103,8 +92,8 @@ const ProductTable = (props) => {
                           <th>
                               <button
                               type="button"
-                              onClick={() => requestSort('deaths')}
-                              className={getClassNamesFor('deaths')}
+                              onClick={() => requestSort('deceased')}
+                              className={getClassNamesFor('deceased')}
                               >
                               Deaths
                               </button>
@@ -115,16 +104,16 @@ const ProductTable = (props) => {
                         {items.map((item, index) => (
                         <tr key={index}>
                             <td>
-                                <i className="cm-state-name isBlue"  onClick= {isState === 'true' ? stateClick : ''} stateCode={item.statecode}>
-                                  {item.state}
+                                <i className="cm-state-name">
+                                  {item.district}
                                 </i>
-                                {item.statenotes ?
+                                {item.notes ?
                                     <span>
                                         <span 
                                             data-tip
                                             data-event="touchstart mouseover"
                                             data-event-off="mouseleave"
-                                            data-for={item.state}
+                                            data-for={item.district}
                                         >
                                             <svg 
                                                 xmlns="http://www.w3.org/2000/svg" 
@@ -138,14 +127,14 @@ const ProductTable = (props) => {
                                             </svg>
                                         </span>
                                         <ReactTooltip 
-                                            id={item.state} place="right"
+                                            id={item.district} place="right"
                                             type="dark"
                                             effect="solid"
                                             multiline={true}
                                             globalEventOff="click"
                                             html = {true}
                                         >
-                                            {item.statenotes}
+                                            {item.notes}
                                         </ReactTooltip>
                                     </span>
                                     :
@@ -154,18 +143,18 @@ const ProductTable = (props) => {
                                 
                             </td>
                             <td>
-                              {item.deltaconfirmed > 0 ? 
+                              {item.delta.confirmed > 0 ? 
                                 <span className="isCherry">
-                                  (+{item.deltaconfirmed})  &nbsp;
+                                  (+{item.delta.confirmed})  &nbsp;
                                 </span>
                                 : ''
                               }
                               {item.confirmed}
                             </td>
                             <td>
-                              {item.deltarecovered > 0 ? 
+                              {item.delta.recovered > 0 ? 
                                 <span className="isGreen">
-                                  (+{item.deltarecovered}) &nbsp;
+                                  (+{item.delta.recovered}) &nbsp;
                                 </span>
                                 : ''
                               }
@@ -173,13 +162,13 @@ const ProductTable = (props) => {
                             </td>
                             <td>{item.active}</td>
                             <td>
-                              {item.deltadeaths > 0 ? 
+                              {item.delta.deceased > 0 ? 
                                 <span className="isGrey">
-                                  (+{item.deltadeaths})  &nbsp;
+                                  (+{item.delta.deceased})  &nbsp;
                                 </span>
                                 : ''
                               }
-                              {item.deaths}
+                              {item.deceased}
                             </td>
                         </tr>
                         ))}
@@ -191,25 +180,23 @@ const ProductTable = (props) => {
   );
 };
 
-export default function SortTable({ statewise_total_data, stateClick, isState }) {
-  console.log(statewise_total_data);
-    for(let i=0; i< statewise_total_data.length; i++) {
-        statewise_total_data[i].confirmed = Number(statewise_total_data[i].confirmed);
-        statewise_total_data[i].deltaconfirmed = Number(statewise_total_data[i].deltaconfirmed);
-        statewise_total_data[i].recovered = Number(statewise_total_data[i].recovered);
-        statewise_total_data[i].deltarecovered = Number(statewise_total_data[i].deltarecovered);
-        statewise_total_data[i].active = Number(statewise_total_data[i].active);
-        statewise_total_data[i].deaths = Number(statewise_total_data[i].deaths);
-        statewise_total_data[i].deltadeaths = Number(statewise_total_data[i].deltadeaths);
+export default function DistSortTable({ district_wise_total_data }) {
+  console.log(district_wise_total_data);
+    for(let i=0; i< district_wise_total_data.length; i++) {
+        district_wise_total_data[i].confirmed = Number(district_wise_total_data[i].confirmed);
+        district_wise_total_data[i].delta.confirmed = Number(district_wise_total_data[i].delta.confirmed);
+        district_wise_total_data[i].recovered = Number(district_wise_total_data[i].recovered);
+        district_wise_total_data[i].delta.recovered = Number(district_wise_total_data[i].delta.recovered);
+        district_wise_total_data[i].active = Number(district_wise_total_data[i].active);
+        district_wise_total_data[i].deceased = Number(district_wise_total_data[i].deceased);
+        district_wise_total_data[i].delta.deceased = Number(district_wise_total_data[i].delta.deceased);
     } 
     //console.log(statewise_total_data);
   return (
     <div className="sortTable">
       
       <ProductTable
-        products={statewise_total_data} 
-        stateClick = {stateClick}
-        isState = {isState}
+        products={district_wise_total_data} 
       />
     </div>
   );

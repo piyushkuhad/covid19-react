@@ -2,10 +2,11 @@ import React from 'react';
 import Card from '../Card/Card';
 import MiniGraph from '../MiniGraph/MiniGraph';
 
-const TotalCases = ({totalData, seriesData}) => {
+const TotalCases = ({totalData, seriesData, stateBackClick}) => {
+    console.log('Run', seriesData);
     const {confirmed, active, deaths, deltaconfirmed, deltadeaths, deltarecovered, lastupdatedtime, recovered} = totalData;
-    const origSeriesData = [...seriesData];
-    console.log('Orig', origSeriesData);
+    // const origSeriesData = [...seriesData];
+    // console.log('Orig', origSeriesData);
     const removeItem  = (items, i) => items.splice(0, i);
     removeItem(seriesData, 90);
     
@@ -15,7 +16,7 @@ const TotalCases = ({totalData, seriesData}) => {
         for(let i =0; i < data.length; i++) {
             graphArr.push(Number(data[i].totalconfirmed) - ((Number(data[i].totalrecovered) + (Number(data[i].totaldeceased)))));
         }
-        console.log('Yp', graphArr);
+        //console.log('Yp', graphArr);
         return graphArr;
     }
 

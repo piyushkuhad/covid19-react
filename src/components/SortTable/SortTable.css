@@ -100,3 +100,8 @@ tbody td {
   font-size: 13px;
   font-weight: 600;
 }
+
+.cm-state-name {
+  font-style: normal;
+  cursor: pointer;
+}

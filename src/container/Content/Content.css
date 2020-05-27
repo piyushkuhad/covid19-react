@@ -15,6 +15,10 @@
     width: 80%;
 }
 
+.txt-center {
+    text-align: center;
+}
+
 .isCherry{
     color: #ff073a;
 }

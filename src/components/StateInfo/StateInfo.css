@@ -1,0 +1,50 @@
+.backBtn {
+    padding: 5px 15px;
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.backBtn i {
+    font-style: normal;
+    transition: all 300ms ease;
+}
+
+.backBtn:hover i {
+    padding-right: 5px;
+}
+
+.cm-stateinfo-container h1 {
+    font-size: 35px;
+    margin: 0;
+    padding: 5px 0 25px;
+}
+
+.cm-bookmark ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.cm-bookmark ul li {
+    display: inline-block;
+}
+
+.cm-bookmark ul li:last-child:before {
+    content: '/';
+    padding: 0 10px;
+}
+
+.cm-bookmark ul li:first-child {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cm-bookmark ul li:last-child {
+    color: #666;
+}
