@@ -2,13 +2,14 @@ import React from 'react';
 import Card from '../Card/Card';
 import MiniGraph from '../MiniGraph/MiniGraph';
 
-const TotalCases = ({totalData, seriesData, stateBackClick}) => {
-    console.log('Run', seriesData);
+const TotalCases = ({totalData, seriesData}) => {
     const {confirmed, active, deaths, deltaconfirmed, deltadeaths, deltarecovered, lastupdatedtime, recovered} = totalData;
-    // const origSeriesData = [...seriesData];
-    // console.log('Orig', origSeriesData);
+
+    let seriesDataTrim = seriesData;
     const removeItem  = (items, i) => items.splice(0, i);
-    removeItem(seriesData, 90);
+    if(seriesDataTrim.length > 100) {
+        removeItem(seriesDataTrim, 90);
+    }
     
     const getGraphActiveData = (data) => {
         let graphArr = [];
@@ -49,7 +50,11 @@ const TotalCases = ({totalData, seriesData, stateBackClick}) => {
                             smallHead={deltaconfirmed} 
                             shadowPulseColor="isCherryBg"
                         />
-                        <MiniGraph graphLabel={getGraphData(seriesData, 'date')} graphData={getGraphData(seriesData, 'dailyconfirmed', 'number')} borderColor="#ff073a" />
+                        <MiniGraph 
+                            graphLabel={getGraphData(seriesDataTrim, 'date')} 
+                            graphData={getGraphData(seriesDataTrim, 'dailyconfirmed', 'number')} 
+                            borderColor="#ff073a" 
+                        />
                     </div>
                     <div className="cm-card-item-wrapper">
                         <Card 
@@ -58,7 +63,11 @@ const TotalCases = ({totalData, seriesData, stateBackClick}) => {
                             bigHead={active}
                             shadowPulseColor="isBlueBg"
                         />
-                        <MiniGraph graphLabel={getGraphData(seriesData, 'date')} graphData={getGraphActiveData(seriesData)} borderColor="#007bff" />
+                        <MiniGraph 
+                            graphLabel={getGraphData(seriesDataTrim, 'date')} 
+                            graphData={getGraphActiveData(seriesDataTrim)} 
+                            borderColor="#007bff" 
+                        />
                     </div>
                     <div className="cm-card-item-wrapper">
                         <Card 
@@ -68,7 +77,11 @@ const TotalCases = ({totalData, seriesData, stateBackClick}) => {
                             smallHead={deltarecovered}
                             shadowPulseColor="isGreenBg"
                         />
-                        <MiniGraph graphLabel={getGraphData(seriesData, 'date')} graphData={getGraphData(seriesData, 'dailyrecovered', 'number')} borderColor="#28a745" />
+                        <MiniGraph 
+                            graphLabel={getGraphData(seriesDataTrim, 'date')} 
+                            graphData={getGraphData(seriesDataTrim, 'dailyrecovered', 'number')} 
+                            borderColor="#28a745" 
+                        />
                     </div>
                     <div className="cm-card-item-wrapper">
                         <Card 
@@ -78,7 +91,11 @@ const TotalCases = ({totalData, seriesData, stateBackClick}) => {
                             smallHead={deltadeaths}
                             shadowPulseColor="isGreyBg"
                         />
-                        <MiniGraph graphLabel={getGraphData(seriesData, 'date')} graphData={getGraphData(seriesData, 'dailydeceased', 'number')} borderColor="#6c757d" />
+                        <MiniGraph 
+                            graphLabel={getGraphData(seriesDataTrim, 'date')} 
+                            graphData={getGraphData(seriesDataTrim, 'dailydeceased', 'number')} 
+                            borderColor="#6c757d" 
+                        />
                     </div>                    
                 </div>
             </div>

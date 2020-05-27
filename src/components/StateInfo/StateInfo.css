@@ -18,7 +18,7 @@
     padding-right: 5px;
 }
 
-.cm-stateinfo-container h1 {
+.cm-stateinfo-container .cm-bookmark + h1 {
     font-size: 35px;
     margin: 0;
     padding: 5px 0 25px;

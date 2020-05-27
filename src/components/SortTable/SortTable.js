@@ -192,7 +192,7 @@ const ProductTable = (props) => {
 };
 
 export default function SortTable({ statewise_total_data, stateClick, isState }) {
-  console.log(statewise_total_data);
+  //console.log(statewise_total_data);
     for(let i=0; i< statewise_total_data.length; i++) {
         statewise_total_data[i].confirmed = Number(statewise_total_data[i].confirmed);
         statewise_total_data[i].deltaconfirmed = Number(statewise_total_data[i].deltaconfirmed);

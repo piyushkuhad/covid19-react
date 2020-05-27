@@ -18,7 +18,6 @@ export default class MiniGraph extends React.Component {
           }
         ]
       }
-      //console.log('Graph State', this.state);
   }
   render() {
     return (

@@ -36,7 +36,6 @@ class Content extends Component {
       );
     });
   
-    // fetch('https://api.covid19india.org/state_district_wise.json')
     fetch('https://api.covid19india.org/v2/state_district_wise.json')
     .then(response => response.json())
     .then(data => {
@@ -53,25 +52,15 @@ class Content extends Component {
         stateBackClick: true
       }
     )
-    //console.log(district_info[e.target.innerText]);
-    //console.log(e.target.getAttribute('statecode'));
-    //console.log(stateCode_route);
   }
 
   stateBackClick = (e) => {
-    this.setState(
-      {
-        state_click: false,
-        stateCode_route: '',
-        selected_state: '',
-        stateBackClick: false
-      }
-    )
+    this.setState({state_click: false, stateCode_route: '',selected_state: '',stateBackClick: false})
   }
   
   render(){
     //console.log('This: ', this.state.state_click + ' ' + this.state.stateCode_route);
-    if(this.state.statewise_total_data.length) {
+    if(this.state.statewise_total_data.length > 0) { 
       return (
         <div className="Content" style={{paddingBottom: 30}}>
           {
